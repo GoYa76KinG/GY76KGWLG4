@@ -19,20 +19,24 @@ namespace Week2
             string[] massive = rs.ReadLine().Split(' ');
             for (int i = 0; i < massive.Length; i++)
                 array[i] = int.Parse(massive[i]);
+            int k = 0;
             int min = array[0];
-            int max = array[0];
             for (int i = 0; i < array.Length; i++)
             {
-                if (min > array[i])
+                for (int j = 1; j < min; j++)
+                {
+                    if (array[i] % j == 0)
+                    {
+                        k++;
+                    }
+                }
+                if (k == 2 && array[i] < min)
+                {
                     min = array[i];
+                }
+                k = 0;
             }
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (max < array[i])
-                    max = array[i];
-            }
-            sw.WriteLine("Minumum is: " + min);
-            sw.WriteLine("Maximum is: " + max);
+            sw.WriteLine("Minumum prime number is: " + min);
             sw.Close();
             rs.Close();
         }
