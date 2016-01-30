@@ -10,23 +10,14 @@ namespace Week1
     {
         static void Main(string[] args)
         {
-             Console.WriteLine("\aEnter your numbers: "); 
-             string PrimeNumbers = Console.ReadLine(); 
-             string[] Prime = PrimeNumbers.Split(); 
-             foreach (string num in Prime) 
-             {
-                 int PrimeNumb = int.Parse(num); 
-                 int i, k = 1; 
-                 for (i = 2; (i < PrimeNumb) && (PrimeNumb != 1) && (PrimeNumb != 2) && (k != 0); i++) 
-                 {
-                     k = PrimeNumb % i;
-                 }
-                 if ((k != 0) && (PrimeNumb != 0)) 
-                 {
-                     Console.Write("{0} ", PrimeNumb);
-                 }
-             }
-             Console.ReadKey();
+            Console.WriteLine("\aWrite complex number \"a\": ");
+            Complex a = new Complex(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+            Console.WriteLine("\aWrite complex number \"b\": ");
+            Complex b = new Complex(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+            Complex c;
+            c = a + b;
+            Console.WriteLine("a + b = " + c);
+            Console.ReadKey();
         }
     }
 }
