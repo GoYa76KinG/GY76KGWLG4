@@ -9,7 +9,7 @@ namespace GY76KGW2LB1G4.cs
 {
     class Program
     {
-        static void LookIn(string path)
+        static void Look(string path)
         {
             Stack<string> dirs = new Stack<string>();
             dirs.Push(path);
